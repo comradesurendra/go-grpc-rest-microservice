@@ -1,0 +1,456 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "proto/home.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "LoanService"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/loan/health-check": {
+      "get": {
+        "operationId": "LoanService_HealthCheck",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/homeHealthResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "message",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "LoanService"
+        ]
+      }
+    },
+    "/v1/loan/homedata": {
+      "get": {
+        "operationId": "LoanService_HomeData",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/homeHomedataResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "value",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "city",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "area",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "mlonetype",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "sid",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "deviceid",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "mloantype",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "source",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "tags": [
+          "LoanService"
+        ]
+      }
+    },
+    "/v1/loan/offersdata": {
+      "get": {
+        "operationId": "LoanService_OffersData",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/homeOffersdataResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "value",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "city",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "area",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "mlonetype",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "sid",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "deviceid",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "mloantype",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "source",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "tags": [
+          "LoanService"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "homeArticaldata": {
+      "type": "object",
+      "properties": {
+        "img": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "time": {
+          "type": "string"
+        }
+      }
+    },
+    "homeArticals": {
+      "type": "object",
+      "properties": {
+        "articaldata": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/homeArticaldata"
+          }
+        },
+        "moretext": {
+          "type": "string"
+        },
+        "moreurl": {
+          "type": "string"
+        }
+      }
+    },
+    "homeButtondata": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      }
+    },
+    "homeEmical": {
+      "type": "object",
+      "properties": {
+        "img": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      }
+    },
+    "homeHealthResponse": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        }
+      }
+    },
+    "homeHomedataInnerResponse": {
+      "type": "object",
+      "properties": {
+        "slider": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/homeSlider"
+          }
+        },
+        "hotkey": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/homeHotkey"
+          }
+        },
+        "offers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/homeLoanoffers"
+          }
+        },
+        "scoredata": {
+          "$ref": "#/definitions/homeScoredata"
+        },
+        "emical": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/homeEmical"
+          }
+        },
+        "articals": {
+          "$ref": "#/definitions/homeArticals"
+        },
+        "mloantype": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "homeHomedataResponse": {
+      "type": "object",
+      "properties": {
+        "results": {
+          "$ref": "#/definitions/homeHomedataInnerResponse"
+        }
+      }
+    },
+    "homeHotkey": {
+      "type": "object",
+      "properties": {
+        "img": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "homeLoanoffers": {
+      "type": "object",
+      "properties": {
+        "amount": {
+          "type": "string"
+        },
+        "amtype": {
+          "type": "string"
+        },
+        "img": {
+          "type": "string"
+        },
+        "comment": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "button": {
+          "$ref": "#/definitions/homeButtondata"
+        }
+      }
+    },
+    "homeOffers": {
+      "type": "object",
+      "properties": {
+        "bankid": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "bankname": {
+          "type": "string"
+        },
+        "bankimg": {
+          "type": "string"
+        },
+        "loanamt": {
+          "type": "string"
+        },
+        "interestrate": {
+          "type": "string"
+        },
+        "processingfee": {
+          "type": "string"
+        },
+        "loantype": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "button": {
+          "$ref": "#/definitions/homeButtondata"
+        },
+        "rating": {
+          "type": "string"
+        },
+        "unitLoanAmount": {
+          "type": "string"
+        },
+        "Unitshortname": {
+          "type": "string"
+        }
+      }
+    },
+    "homeOffersdataResponse": {
+      "type": "object",
+      "properties": {
+        "results": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/homeOffers"
+          }
+        }
+      }
+    },
+    "homeScoredata": {
+      "type": "object",
+      "properties": {
+        "img": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      }
+    },
+    "homeSlider": {
+      "type": "object",
+      "properties": {
+        "img": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package home;
+option go_package = "/home";
+
+service LoanService {
+  rpc HomeData(HomeDataRequest) returns (HomedataResponse) {}
+}
+
+message HomeDataRequest {
+  string name = 1;
+  string city = 2;
+}
+
+message HomedataResponse{
+  string result = 1;
+}

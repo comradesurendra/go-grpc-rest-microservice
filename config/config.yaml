@@ -1,0 +1,18 @@
+# Server configurations
+server:
+  host: ""
+  port: "3333"
+
+# Database credentials
+database:
+  user: "mysql user"
+  pass: "mysql password" 
+  ip   : "ip of the database"
+# Path to direcotry  
+paths:
+  rootpath: ""
+
+# Ports
+ports:
+  rpcport: "4444"
+  rpcip: ""

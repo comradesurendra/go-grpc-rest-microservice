@@ -1,0 +1,8 @@
+type: google.api.Service
+config_version: 3
+
+http:
+  rules:
+    - selector: home.LoanService.HomeData
+      get: /v1/loan/homedata
+      
