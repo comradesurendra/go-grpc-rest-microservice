@@ -67,14 +67,14 @@ ENDPOINT: http://localhost:port/v1/loan/homedata?value=test
 ```
 curl -d "value=test data again" http://localhost:port/v1/loan/homedata?value=test
 ```
-## Run SwaggerUI:-
+## Run SwaggerUI
 ```
 go to the swaggerui dir and run cmd
 go run main.go
 once server starts go to the browser and hit 
 http://localhost:8080
 ```
-## GoDoc:-
+## GoDoc
 **GoDoc Creation**
 
 Example:: creating go doc for `_file.go_` 
@@ -107,7 +107,7 @@ http://localhost:6060/pkg/GRPC-SERVE
 ```
 **!! you will get all your docs here !!**
 
-## Zap (Level logging):-
+## Zap (Level logging)
 **For Development Environment**
 
 ```
@@ -128,7 +128,7 @@ helper.SugarObj.Info("Info Level")
 helper.SugarObj.Error("Error")
 helper.SugarObj.Warn("Warning")
 ```
-## Testing:-
+## Testing
 • To write unit tests in GoLang, we need to import the testing package. There are some rules when doing testing. The filename must end with _test.
 
 ```
@@ -154,7 +154,7 @@ _You should see-_
 PASS
 coverage: 100.0% of statements
 ```
-**BENCHMARKS:-**
+**BENCHMARKS**
 
 • Function 
 
@@ -189,11 +189,11 @@ go test -bench=.
 ```
 go test -cpu flag:
 ```
-**SKIPPING SOME TEST/BENCHMARKS:-**
+**SKIPPING SOME TEST/BENCHMARKS**
 
 • Tests or benchmarks may be skipped at run time with a call to the `Skip method of *T or *B`:
 
-• eg:-
+• eg
 
 ```
 func TestTimeConsuming(t *testing.T) {
